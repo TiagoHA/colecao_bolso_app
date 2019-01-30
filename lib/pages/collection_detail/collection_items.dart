@@ -6,7 +6,7 @@ import '../../helpers/shimmers.dart' as Shimmers;
 import '../../widgets/ui-elements/tag.dart';
 
 class CollectionListItemsView extends StatefulWidget {
-    final int collectionId;
+    final String collectionId;
   final CollectionItemModel collectionItemModel;
 
   CollectionListItemsView(this.collectionId, this.collectionItemModel);

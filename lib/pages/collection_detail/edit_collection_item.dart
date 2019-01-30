@@ -11,7 +11,7 @@ import '../../widgets/forms-input/image.dart';
 
 class EditCollectionItemPage extends StatefulWidget {
   /// É possível criamos um item para uma determinada coleção, basta informar o ID da mesma
-  final int collectionId;
+  final String collectionId;
 
   /// Quando collectionId for nulo, deve ser passado valor
   final CollectionModel collectionModel;
@@ -32,7 +32,7 @@ class EditCollectionItemPage extends StatefulWidget {
 }
 
 class _EditCollectionItemPageState extends State<EditCollectionItemPage> {
-  int _selectedCollectionId;
+  String _selectedCollectionId;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, dynamic> _formData = {
     'number': '',
@@ -137,13 +137,13 @@ class _EditCollectionItemPageState extends State<EditCollectionItemPage> {
             SizedBox(
               width: 25.0,
             ),
-            DropdownButton(
+            DropdownButton<String>(
                 value: _selectedCollectionId,
                 items: model.collections
-                    .map((item) => DropdownMenuItem<int>(
-                        value: item.id, child: Text(item.name)))
+                    .map((item) => DropdownMenuItem<String>(
+                        value: item.id.toString(), child: Text(item.name)))
                     .toList(),
-                onChanged: (int value) {
+                onChanged: (String value) {
                   setState(() {
                     _selectedCollectionId = value;
                     print(_selectedCollectionId);

@@ -14,14 +14,14 @@ class CollectionItemModel extends LoadingModel {
     notifyListeners();
   }
 
-  addCollectionItem(int collectionId, CollectionItem entity) {
+  addCollectionItem(String collectionId, CollectionItem entity) {
     entity.setId(_data.length + 1);
     _data.add(entity);
 
     notifyListeners();
   }
 
-  toggleFav(int collectionId, int index) {
+  toggleFav(String collectionId, int index) {
     var model = _data[index];
     var newOne = CollectionItem(
         number: model.number,
@@ -36,7 +36,7 @@ class CollectionItemModel extends LoadingModel {
     notifyListeners();
   }
 
-  List<CollectionItem> getItems(int collectionId) {
+  List<CollectionItem> getItems(String collectionId) {
     var result = _data
         .where((CollectionItem item) => item.collectionId == collectionId)
         .toList();
@@ -46,7 +46,7 @@ class CollectionItemModel extends LoadingModel {
     return result;
   }
 
-  List<CollectionItem> getFavItems(int collectionId) {
+  List<CollectionItem> getFavItems(String collectionId) {
     var result = _data
         .where((CollectionItem item) =>
             item.collectionId == collectionId && item.isFav)
@@ -68,20 +68,20 @@ class CollectionItemModel extends LoadingModel {
     return result;
   }
 
-  Future fetch(int collectionId) {
+  Future fetch(String collectionId) {
     setLoading(true);
 
     return Future.delayed(const Duration(seconds: 1), () => "5").then((value) {
       if (_data.length == 0) {
         _data.addAll([
           CollectionItem(
-              collectionId: 1, isFav: true, number: "1", quantity: 5),
+              collectionId: '1', isFav: true, number: "1", quantity: 5),
           CollectionItem(
-              collectionId: 1, isFav: false, number: "2", quantity: 1),
+              collectionId: '1', isFav: false, number: "2", quantity: 1),
           CollectionItem(
-              collectionId: 1, isFav: false, number: "3", quantity: 3),
+              collectionId: '1', isFav: false, number: "3", quantity: 3),
           CollectionItem(
-              collectionId: 1, isFav: true, number: "4", quantity: 1),
+              collectionId: '1', isFav: true, number: "4", quantity: 1),
         ]);
       }
 

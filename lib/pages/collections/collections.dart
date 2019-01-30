@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:firebase_database/firebase_database.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -10,7 +13,6 @@ import '../../helpers/shimmers.dart' as Shimmers;
 
 class CollectionsPage extends StatefulWidget {
   final CollectionModel collectionModel;
-
   CollectionsPage(this.collectionModel);
 
   _CollectionsPageState createState() => _CollectionsPageState();

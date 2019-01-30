@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CollectionItem {
   int _id;
-  final int collectionId;
+  final String collectionId;
   final String number;
   final bool isFav;
   final int quantity;

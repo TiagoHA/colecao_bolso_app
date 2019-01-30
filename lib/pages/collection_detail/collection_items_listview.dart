@@ -5,7 +5,7 @@ import '../../helpers/shimmers.dart' as Shimmers;
 import '../../models/collection_item.dart';
 
 class CollectionListItemsDefaultView extends StatefulWidget {
-  final int collectionId;
+  final String collectionId;
   final CollectionItemModel collectionItemModel;
   final Function getData;
 

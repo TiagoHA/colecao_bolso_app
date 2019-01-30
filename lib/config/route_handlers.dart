@@ -48,7 +48,7 @@ var createCollectionItemHandler = Handler(
   var model2 = CollectionModel.of(context);
 
   return EditCollectionItemPage(
-    collectionId: index,
+    collectionId: index.toString(),
     collectionItemModel: model,
     collectionModel: model2,
   );
